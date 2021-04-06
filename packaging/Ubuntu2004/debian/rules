@@ -45,15 +45,24 @@ override_dh_install:
 	cp thg debian/tortoisehg/usr/bin
 
 	# copy dist package
-	mkdir -p debian/tortoisehg/usr/lib/python3/dist-packages/tortoisehg
-	cp -r tortoisehg/* debian/tortoisehg/usr/lib/python3/dist-packages/tortoisehg
+	# TODO: getting hgcommands.py not found errors
+	# mkdir -p debian/tortoisehg/usr/lib/python3/dist-packages/tortoisehg
+	# cp -r tortoisehg/* debian/tortoisehg/usr/lib/python3/dist-packages/tortoisehg
+	# So install to /usr/bin/tortoisehg instead:
+	mkdir -p debian/tortoisehg/usr/bin/tortoisehg
+	cp -r tortoisehg/* debian/tortoisehg/usr/bin/tortoisehg
 
 	# copy config.py
-	cp debian/config.py debian/tortoisehg/usr/lib/python3/dist-packages/tortoisehg/util
+	#cp debian/config.py debian/tortoisehg/usr/lib/python3/dist-packages/tortoisehg/util
+	cp debian/config.py debian/tortoisehg/usr/bin/tortoisehg/util
 
 	# icons
 	mkdir -p debian/tortoisehg/usr/share/pixmaps/tortoisehg/icons
 	cp -r icons/* debian/tortoisehg/usr/share/pixmaps/tortoisehg/icons
+
+	# localisation
+	mkdir -p debian/tortoisehg/usr/share/locale
+	cp -r locale/* debian/tortoisehg/usr/share/locale
 
 	# Call dh_install normally. It will process .install, .install.ARCH
 	# and/or .install.OS files.
