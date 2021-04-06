@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=TortoiseHg
 Exec=/usr/bin/thg
+Icon=/usr/share/pixmaps/tortoisehg/icons/svg/thg_logo.svg
 Type=Application
 Terminal=false
 Categories=GNOME;GTK;Mercurial;Development

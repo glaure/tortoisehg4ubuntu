@@ -41,9 +41,19 @@ override_dh_install:
 	cp debian/tortoisehg.desktop debian/tortoisehg/usr/share/applications
 
 	# copy app
-	mkdir -p debian/tortoisehg/usr/bin/tortoisehg
-	cp -r tortoisehg/* debian/tortoisehg/usr/bin/tortoisehg
+	mkdir -p debian/tortoisehg/usr/bin
 	cp thg debian/tortoisehg/usr/bin
+
+	# copy dist package
+	mkdir -p debian/tortoisehg/usr/lib/python3/dist-packages/tortoisehg
+	cp -r tortoisehg/* debian/tortoisehg/usr/lib/python3/dist-packages/tortoisehg
+
+	# copy config.py
+	cp debian/config.py debian/tortoisehg/usr/lib/python3/dist-packages/tortoisehg/util
+
+	# icons
+	mkdir -p debian/tortoisehg/usr/share/pixmaps/tortoisehg/icons
+	cp -r icons/* debian/tortoisehg/usr/share/pixmaps/tortoisehg/icons
 
 	# Call dh_install normally. It will process .install, .install.ARCH
 	# and/or .install.OS files.
