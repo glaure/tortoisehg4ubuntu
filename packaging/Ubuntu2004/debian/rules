@@ -1,0 +1,56 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# tortoisehg
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+DEB_HOST_ARCH_OS ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+DEB_HOST_ARCH_BITS ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_BITS)
+
+
+# set arguments for cmbuild
+ifeq ($(DEB_HOST_ARCH), amd64)
+	dw_arch = x64
+	dw_builddir = build64
+else ifeq ($(DEB_HOST_ARCH), i386)
+	dw_arch = x86
+	dw_builddir = build
+else
+	$(error Unsupported host architecture $(DEB_HOST_ARCH))
+endif
+
+
+# default pattern rule -> delegate all targets to dh
+%:
+	dh $@ --parallel --buildsystem=makefile 
+
+# call cmbuild.py for configuring
+override_dh_auto_configure:
+	echo "no configure step"
+
+
+# Install from prefix dir to package install dir
+# 2. use dh_install and copy them to the package dir
+override_dh_install:
+	# copy desktop file
+	mkdir -p debian/tortoisehg/usr/share/applications
+	cp debian/tortoisehg.desktop debian/tortoisehg/usr/share/applications
+
+	# copy app
+	mkdir -p debian/tortoisehg/usr/bin/tortoisehg
+	cp -r tortoisehg/* debian/tortoisehg/usr/bin/tortoisehg
+	cp thg debian/tortoisehg/usr/bin
+
+	# Call dh_install normally. It will process .install, .install.ARCH
+	# and/or .install.OS files.
+	dh_install
+	dh_missing --fail-missing
+
+
+# Dont run tests - These are run in an extra build step
+override_dh_auto_test:
+

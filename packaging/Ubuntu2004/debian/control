@@ -1,0 +1,30 @@
+Source: tortoisehg
+Section: devel
+Priority: optional
+Maintainer: Gunther Laure <gunther.laure@gmail.com>
+Original-Maintainer: Ludovico Cavedon <cavedon@debian.org>
+Build-Depends: debhelper (>= 9.20160114),
+               python-is-python3,
+               python3-pip,
+               build-essential,
+               pyqt5.qsci-dev,
+               python3-pyqt5.qsci,
+               python3-iniparse
+Standards-Version: 3.9.2
+Homepage: https://foss.heptapod.net/mercurial/tortoisehg/thg
+
+Package: tortoisehg
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, 
+                python3-pyqt5.qsci,
+                python-is-python3,
+                python3-iniparse
+Description: Graphical tool for working with mercurial
+ TortoiseHg provides a graphical tool for interacting with the distributed
+ revision control system Mercurial.  GUI support is provided for over a
+ dozen operations, including add files, commit changes, manage ignore
+ filter, view change log, merge, recover/rollback, edit configuration,
+ synchronize repository, and many others.   The highlight is the
+ interactive commit tool which allows easy selection of diffs from multiple
+ files and packaging into changesets, and which is more powerful and easier
+ to use than available alternatives such as qct and hgct (commit-tool).

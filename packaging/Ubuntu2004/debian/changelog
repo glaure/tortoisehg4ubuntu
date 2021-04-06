@@ -1,0 +1,5 @@
+tortoisehg (5.7-glaure) focal; urgency=medium
+
+  * Initial package for Ubuntu
+
+ -- Gunther Laure <gunther.laure@gmail.com>  Tue, 06 Apr 2021 06:24:36 +0000

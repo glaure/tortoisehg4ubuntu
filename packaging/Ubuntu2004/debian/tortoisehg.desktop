@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=TortoiseHg
+Exec=/usr/bin/thg
+Type=Application
+Terminal=false
+Categories=GNOME;GTK;Mercurial;Development
