@@ -1,6 +1,8 @@
 # tortoisehg4ubuntu
 Script to use tortoisehg on ubuntu 20.04 or higher
 
+Ubuntu packages to test are available in the "Releases" section.
+
 [![Github All Releases](https://img.shields.io/github/downloads/glaure/tortoisehg4ubuntu/total)]()
 
 ## Inspired by:
