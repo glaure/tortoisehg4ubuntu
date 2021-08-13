@@ -3,6 +3,15 @@ Script to use tortoisehg on ubuntu 20.04 or higher
 
 Ubuntu packages to test are available in the "Releases" section.
 
+The latest 5.8.1 package is self-contained and does not need other steps then
+
+```
+sudo apt install ./tortoisehg_5.8.1-glaure_amd64.deb
+```
+
+Note:
+You may have to remove a current mercurial installation. This package only works with 
+mercurial 5.8.1. The dependency is automatically resolved by pypi/pip during the installation.
 
 # Downloads
 [![Github All Releases](https://img.shields.io/github/downloads/glaure/tortoisehg4ubuntu/total)]()
