@@ -5,11 +5,16 @@
 set -e
 
 # HG TAG
-HG_TAG=5.4.2
+HG_TAG=5.8.1
 
 # Clone tortoisehg repository.
 if [ ! -e thg ]; then
     hg clone https://foss.heptapod.net/mercurial/tortoisehg/thg
+else
+    pushd thg
+    hg pull
+    hg update
+    popd
 fi
 
 # Enter thg clone

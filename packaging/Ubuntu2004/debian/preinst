@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    install)
+        # Install Pypi package dependencies
+        pip3 install pyqt5
+        pip3 install mercurial==5.8.1
+        pip3 install qscintilla
+        ;;
+
+    upgrade|abort-upgrade)
+        ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 0
+        ;;
+esac
+
+
+exit 0

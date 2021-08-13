@@ -19,7 +19,7 @@ apt install --yes python3-pip build-essential
 pip3 install pyqt5
 
 # Install Mercurial
-pip3 install mercurial==5.4
+pip3 install mercurial==5.8.1
 
 # Install Qscintilla.
 pip3 install qscintilla

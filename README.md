@@ -25,7 +25,7 @@ Build thg (tortoisehg)
 
 
 ## Manual Instructions
-If you have trust issues to run the scrip as root, refer to the manual installation steps:
+If you have trust issues to run the script as root, refer to the manual installation steps:
 
 
 I do not have a working package or snap. But using these instructions, it is rather easy to get tortoisehg working from source.
