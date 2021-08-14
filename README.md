@@ -3,7 +3,7 @@ Script to use tortoisehg on ubuntu 20.04 or higher
 
 Ubuntu packages to test are available in the "Releases" section.
 
-The latest 5.8.1 package is self-contained and does not need other steps then
+The latest 5.8.1 package is self-contained and does not need additional steps.
 
 ```
 sudo apt install ./tortoisehg_5.8.1-glaure_amd64.deb
