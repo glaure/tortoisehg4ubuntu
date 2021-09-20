@@ -1,4 +1,10 @@
-tortoisehg (5.8.1-glaure) focal; urgency=medium
+tortoisehg (5.9.1-glaure) focal; urgency=medium
+
+  * New package for 5.9.1 release
+
+ -- Gunther Laure <gunther.laure@gmail.com>  Tue, 20 Sep 2021 10:08:00 +0000
+ 
+ tortoisehg (5.8.1-glaure) focal; urgency=medium
 
   * Initial package for Ubuntu
 

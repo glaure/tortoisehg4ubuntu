@@ -5,7 +5,7 @@
 set -e
 
 # HG TAG
-HG_TAG=5.8.1
+HG_TAG=5.9.1
 
 # Clone tortoisehg repository.
 if [ ! -e thg ]; then
