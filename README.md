@@ -1,5 +1,6 @@
 # tortoisehg4ubuntu
-Script to use tortoisehg on ubuntu 20.04.
+
+tortoisehg for Ubuntu 20.04.
 
 Ubuntu packages to test are available in the "Releases" section.
 
